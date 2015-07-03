@@ -21,6 +21,29 @@
                   parent="main_banker_menu"/>
 	<menuitem id="bankers_menu" name="Banking_system" parent="banker_menu"
                   action="bank_list_action"/>
+	
+	<record model="ir.ui.view" id="session_form_view">
+            <field name="name">Banking_system</field>
+            <field name="model">banker.banker</field>
+            <field name="arch" type="xml">
+                <form string="banking form">
+                    <sheet>
+                        <group>
+                            <group string="Account Details">
+                                <field name="phone_num"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+	
+	<record model="ir.actions.act_window" id="banking_list_action">
+            <field name="name">banking</field>
+            <field name="res_model">banker.banker</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
 
     </data>
 </openerp>
